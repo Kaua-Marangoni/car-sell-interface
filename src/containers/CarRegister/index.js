@@ -155,7 +155,7 @@ export function CarRegister() {
             <Label>Marca</Label>
             <Input
               type="text"
-              placeholder="Digite a marca do veículo. Ex: Nissan"
+              placeholder="Ex: Nissan"
               {...register("brand")}
               error={errors.brand?.message}
             />
@@ -166,7 +166,7 @@ export function CarRegister() {
             <Label>Modelo</Label>
             <Input
               type="text"
-              placeholder="Digite o modelo do veículo. Ex: GT-R"
+              placeholder="Ex: GT-R"
               {...register("model")}
               error={errors.model?.message}
             />
@@ -177,7 +177,7 @@ export function CarRegister() {
             <Label>Versão</Label>
             <Input
               type="text"
-              placeholder="Digite a versão do veículo. Ex: Nismo"
+              placeholder="Ex: Nismo"
               {...register("version")}
               error={errors.version?.message}
             />
@@ -188,7 +188,7 @@ export function CarRegister() {
             <Label>KM</Label>
             <Input
               type="number"
-              placeholder="Digite a quilometragem do veículo. Ex: 7.500"
+              placeholder="Ex: 7.500"
               {...register("km")}
               error={errors.km?.message}
             />
@@ -199,7 +199,7 @@ export function CarRegister() {
             <Label>Ano</Label>
             <Input
               type="number"
-              placeholder="Digite o ano do veículo. Ex: 2017"
+              placeholder="Ex: 2017"
               {...register("year")}
               error={errors.year?.message}
             />
@@ -243,7 +243,7 @@ export function CarRegister() {
                   border: "none"
                 }}
                 type="tel"
-                placeholder="Digite o preço do veículo. Ex: R$ 750.000,00"
+                placeholder="Ex: R$ 750.000,00"
                 {...register("price")}
               />
             </FieldPrice>

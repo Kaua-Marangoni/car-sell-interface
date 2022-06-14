@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 60px;
   padding: 0 10px;
+  overflow: auto;
   background: #5c95ff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

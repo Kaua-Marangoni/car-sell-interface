@@ -61,40 +61,42 @@ export function Home() {
   }, [activeCategory, cars])
 
   return (
-    <Container>
+    <>
       <Header />
-      <h1>Categorias</h1>
+      <Container>
+        <h1>Categorias</h1>
 
-      <ContainerCategory>
-        {!loadingCategories ? (
-          categories.map(category => (
-            <CardCategory
-              key={category.id}
-              category={category}
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-            />
-          ))
-        ) : (
-          <Loading />
-        )}
-      </ContainerCategory>
+        <ContainerCategory>
+          {!loadingCategories ? (
+            categories.map(category => (
+              <CardCategory
+                key={category.id}
+                category={category}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
+              />
+            ))
+          ) : (
+            <Loading />
+          )}
+        </ContainerCategory>
 
-      <h1>Anunciados</h1>
+        <h1>Anunciados</h1>
 
-      <ContainerCars>
-        {!loadingCars ? (
-          filteredCars.map(car => <CardVehicle key={car.id} car={car} />)
-        ) : (
-          <Loading isVehicle />
-        )}
+        <ContainerCars>
+          {!loadingCars ? (
+            filteredCars.map(car => <CardVehicle key={car.id} car={car} />)
+          ) : (
+            <Loading isVehicle />
+          )}
 
-        {!filteredCars.length && !loadingCars && (
-          <InfoCar style={{ color: "#fff", fontWeight: "700" }}>
-            Ops... Nenhum veículo anunciado ainda
-          </InfoCar>
-        )}
-      </ContainerCars>
-    </Container>
+          {!filteredCars.length && !loadingCars && (
+            <InfoCar style={{ color: "#fff", fontWeight: "700" }}>
+              Ops... Nenhum veículo anunciado ainda
+            </InfoCar>
+          )}
+        </ContainerCars>
+      </Container>
+    </>
   )
 }

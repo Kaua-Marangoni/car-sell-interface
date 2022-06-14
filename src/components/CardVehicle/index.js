@@ -104,10 +104,7 @@ export function CardVehicle({ car, filteredCars, setCars, myAds }) {
           >
             <Button
               style={{
-                marginTop: "20px",
-                borderRadius: "0 0 8px 8px",
-                position: "absolute",
-                bottom: 0
+                borderRadius: "0 0 8px 8px"
               }}
             >
               Entrar em contato

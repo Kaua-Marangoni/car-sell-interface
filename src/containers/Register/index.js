@@ -163,7 +163,7 @@ export function Register() {
           <Label>Data de Nascimento</Label>
           <Input
             type="text"
-            placeholder="Digite sua data de nascimento. Ex: 01/01/2000"
+            placeholder="Ex: 01/01/2000"
             {...register("birth_date")}
             error={errors.birth_date?.message}
           />

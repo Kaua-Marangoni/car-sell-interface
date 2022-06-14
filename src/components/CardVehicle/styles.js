@@ -4,7 +4,6 @@ export const Container = styled.div``
 
 export const ItemsCar = styled.div`
   width: 100%;
-  height: 510px;
   padding: 10px 0 0 0;
   background: #bdc3c7;
   display: flex;
@@ -56,7 +55,7 @@ export const InfoCar = styled.p`
 
 export const OpenDescription = styled.p`
   display: block;
-  margin-top: 10px;
+  margin: 10px 0;
   font-weight: bold;
   cursor: pointer;
 
@@ -67,7 +66,5 @@ export const OpenDescription = styled.p`
 
 export const ContainerButtonsPersonalAds = styled.div`
   width: 100%;
-  position: absolute;
-  bottom: 0;
   display: flex;
 `

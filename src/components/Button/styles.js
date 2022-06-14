@@ -10,7 +10,6 @@ export const ContainerButton = styled.button`
   border: none;
   outline: none;
   border-radius: 5px;
-  /* margin: 25px 0 10px 0; */
   transition: all 150ms;
   cursor: pointer;
 

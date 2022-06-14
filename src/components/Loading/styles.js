@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const LoadingSpinner = styled.div`
   width: 2.5em;
   height: 3em;
+  margin: auto;
   border: 3px solid transparent;
   border-top-color: #5c95ff;
   border-bottom-color: #5c95ff;

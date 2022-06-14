@@ -11,6 +11,16 @@ export const ItemsCategory = styled.div`
   border-radius: 8px;
   cursor: pointer;
 
+  @media (max-width: 750px) {
+    width: 150px;
+    height: 110px;
+  }
+
+  @media (max-width: 665px) {
+    width: 110px;
+    height: 100px;
+  }
+
   &:hover {
     img {
       transform: scale(1.2);

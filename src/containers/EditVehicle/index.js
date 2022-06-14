@@ -150,7 +150,7 @@ export function EditVehicle() {
             <Label>Marca</Label>
             <Input
               type="text"
-              placeholder="Digite a marca do veículo. Ex: Nissan"
+              placeholder="Ex: Nissan"
               {...register("brand")}
               error={errors.brand?.message}
             />
@@ -161,7 +161,7 @@ export function EditVehicle() {
             <Label>Modelo</Label>
             <Input
               type="text"
-              placeholder="Digite o modelo do veículo. Ex: GT-R"
+              placeholder="Ex: GT-R"
               {...register("model")}
               error={errors.model?.message}
             />
@@ -172,7 +172,7 @@ export function EditVehicle() {
             <Label>Versão</Label>
             <Input
               type="text"
-              placeholder="Digite a versão do veículo. Ex: Nismo"
+              placeholder="Ex: Nismo"
               {...register("version")}
               error={errors.version?.message}
             />
@@ -183,7 +183,7 @@ export function EditVehicle() {
             <Label>KM</Label>
             <Input
               type="number"
-              placeholder="Digite a quilometragem do veículo. Ex: 7.500"
+              placeholder="Ex: 7.500"
               {...register("km")}
               error={errors.km?.message}
             />
@@ -194,7 +194,7 @@ export function EditVehicle() {
             <Label>Ano</Label>
             <Input
               type="number"
-              placeholder="Digite o ano do veículo. Ex: 2017"
+              placeholder="Ex: 2017"
               {...register("year")}
               error={errors.year?.message}
             />
@@ -239,7 +239,7 @@ export function EditVehicle() {
                   border: "none"
                 }}
                 type="tel"
-                placeholder="Digite o preço do veículo. Ex: R$ 750.000,00"
+                placeholder="Ex: R$ 750.000,00"
                 onKeyUp={event => {
                   const { value } = event.target
                   event.target.value = normalizePrice(value)
@@ -278,7 +278,7 @@ export function EditVehicle() {
               placeholder="Escreva um pouco sobre o veículo"
               {...register("description")}
               error={errors.description?.message}
-              style={{ paddingTop: "3px" }}
+              style={{ paddingTop: "3px", resize: "vertical" }}
             />
             <ErrorMessage>{errors.description?.message}</ErrorMessage>
           </span>

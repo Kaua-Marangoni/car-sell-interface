@@ -6,6 +6,10 @@ export const Container = styled.div`
   background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/9d7f16cc-de5c-4a6c-9264-9eff241c45d2/d2u0xn1-7e03333a-4d03-46b5-80cb-23a535ca28a3.png/v1/fill/w_1131,h_707,q_70,strp/carbon_fibre_wallpaper_pack_by_bodenm_d2u0xn1-pre.jpg");
   display: flex;
   align-items: center;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
 `
 
 export const ContainerItems = styled.div`
@@ -14,10 +18,16 @@ export const ContainerItems = styled.div`
   padding: 80px;
   width: 100%;
   justify-content: center;
+
+  @media (max-width: 520px) {
+    padding: 20px;
+  }
 `
 
 export const Image = styled.img`
   width: 50vw;
+  min-width: 250px;
+  margin-top: 30px;
 `
 
 export const H1 = styled.h1`

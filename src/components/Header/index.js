@@ -73,6 +73,9 @@ export const Header = () => {
                   <li onClick={() => navigate("/meus-anuncios")}>
                     Meus Anúncios
                   </li>
+                  <li onClick={() => navigate("/meus-favoritos")}>
+                    Meus Favoritos
+                  </li>
                   <li onClick={() => navigate("/minha-conta")}>Minha Conta</li>
                 </Ul>
               </ModalUser>

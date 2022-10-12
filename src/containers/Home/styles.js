@@ -24,10 +24,35 @@ export const ContainerCategory = styled.div`
   gap: 20px;
   justify-content: space-around;
 
+  &::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid #ffffff99;
+  }
+
   @media (max-width: 750px) {
     height: auto;
     display: flexbox;
     padding: 0;
+  }
+
+  @media (max-width: 665px) {
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+  }
+`
+
+export const DivGraphic = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 40px 0;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
   }
 `
 
@@ -37,6 +62,8 @@ export const ContainerCars = styled.div`
   padding: 0 50px;
   display: flex;
   flex-wrap: wrap;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
   gap: 15px;
   justify-content: space-around;
 

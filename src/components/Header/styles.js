@@ -114,14 +114,16 @@ export const TextHeader = styled.div`
 
 export const ModalUser = styled.div`
   width: 190px;
-  height: 120px;
+  height: 200px;
   top: 59px;
   right: 0;
+  border-radius: 0 0 8px 8px;
   position: absolute;
   background-color: #5c95ff;
   animation: slideYModal 500ms;
   animation-direction: alternate;
   overflow: hidden;
+  z-index: 999;
 
   @keyframes slideYModal {
     from {
@@ -129,7 +131,7 @@ export const ModalUser = styled.div`
     }
 
     to {
-      height: 120px;
+      height: 200px;
     }
   }
 

@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const apiCarSell = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "https://teste-database-car-sell-production.up.railway.app"
 })
 
 apiCarSell.interceptors.request.use(async config => {

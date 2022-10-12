@@ -19,6 +19,10 @@ export const ContainerItems = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+
+    @media (max-width: 540px) {
+      display: initial;
+    }
   }
 
   @media (max-width: 750px) {
@@ -53,10 +57,6 @@ export const LabelUpload = styled.label`
     opacity: 0;
     width: 1px;
   }
-
-  @media (max-width: 450px) {
-    font-size: 13px;
-  }
 `
 
 export const Input = styled.input`
@@ -69,10 +69,6 @@ export const Input = styled.input`
   outline: none;
   border-radius: 5px;
   background: #dad2d8;
-
-  @media (max-width: 450px) {
-    font-size: 13px;
-  }
 `
 
 export const FieldPrice = styled.div`

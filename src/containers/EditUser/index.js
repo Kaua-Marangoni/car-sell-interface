@@ -214,7 +214,7 @@ export function EditUser() {
           </span>
 
           <span>
-            <Button type="submit" style={{ "max-width": 500 }}>
+            <Button type="submit" style={{ marginTop: "20px" }}>
               Atualizar Conta
             </Button>
           </span>

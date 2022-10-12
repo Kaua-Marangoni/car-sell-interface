@@ -1,15 +1,18 @@
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { BiMap } from "react-icons/bi"
 import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 
 import { Button, ModalDescription } from "../../components"
+import { useUser } from "../../hooks/UserContext"
 import api from "../../services/api"
 import formatDate from "../../utils/formatDate"
 import {
   Container,
   HeaderCarCard,
+  IconHeart,
+  IconHeartChecked,
   ItemsCar,
   CarImage,
   CarName,
@@ -22,6 +25,25 @@ import {
 export function CardVehicle({ car, filteredCars, setCars, myAds }) {
   const [data, setData] = useState({})
   const [showModal, setShowModal] = useState(false)
+  const [user, setUser] = useState([])
+
+  const { userData } = useUser()
+
+  useEffect(() => {
+    if (userData.email) {
+      const fetchUser = async () => {
+        const { data: users } = await api.get("users")
+
+        const newFilteredUser = users.filter(
+          user => user.email === userData.email
+        )
+
+        setUser(newFilteredUser[0].cars_favorites)
+      }
+
+      fetchUser()
+    }
+  }, [userData.email, user.cars_favorites])
 
   const navigate = useNavigate()
 
@@ -62,6 +84,19 @@ export function CardVehicle({ car, filteredCars, setCars, myAds }) {
     setShowModal(true)
   }
 
+  const addCar = async carId => {
+    await api.put(`users/${userData.id}`, { cars_favorites: [...user, carId] })
+    setUser([...user, carId])
+    window.location.reload()
+  }
+
+  const removeCar = async carId => {
+    const carFiltered = user.filter(car => car !== carId)
+    await api.put(`users/${userData.id}`, { cars_favorites: carFiltered })
+    setUser(carFiltered)
+    window.location.reload()
+  }
+
   return (
     <Container>
       <ItemsCar>
@@ -77,7 +112,18 @@ export function CardVehicle({ car, filteredCars, setCars, myAds }) {
         {car.path && (
           <CarImage src={car.url} alt={`Imagem ${car.brand} ${car.model}`} />
         )}
-        <CarPrice>Preço: R$ {car.price}</CarPrice>
+        <CarPrice>
+          {userData.email && (
+            <>
+              {user.includes(car.id) ? (
+                <IconHeartChecked onClick={() => removeCar(car.id)} />
+              ) : (
+                <IconHeart onClick={() => addCar(car.id)} />
+              )}
+            </>
+          )}
+          Preço: R$ {car.price}
+        </CarPrice>
         <InfoCar>
           <BiMap style={{ fontSize: 20 }} />
           {car.user_city}, {car.user_state}

@@ -19,6 +19,10 @@ export const ContainerItems = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+
+    @media (max-width: 540px) {
+      display: initial;
+    }
   }
 
   @media (max-width: 750px) {

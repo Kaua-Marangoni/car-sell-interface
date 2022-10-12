@@ -1,7 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import { Header } from "../components"
+import { Header, Footer } from "../components"
 import {
   Home,
   Login,
@@ -9,6 +9,7 @@ import {
   CarRegister,
   EditVehicle,
   MyAds,
+  MyFavorites,
   MyAccount,
   EditUser,
   Search
@@ -28,6 +29,7 @@ const RoutesApp = () => {
             <PrivateRoute>
               <Header />
               <CarRegister />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -37,6 +39,7 @@ const RoutesApp = () => {
             <PrivateRoute>
               <Header />
               <MyAds />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -46,6 +49,7 @@ const RoutesApp = () => {
             <PrivateRoute>
               <Header />
               <EditVehicle />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -55,6 +59,17 @@ const RoutesApp = () => {
             <PrivateRoute>
               <Header />
               <Search />
+              <Footer />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="meus-favoritos"
+          element={
+            <PrivateRoute>
+              <Header />
+              <MyFavorites />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -64,6 +79,7 @@ const RoutesApp = () => {
             <PrivateRoute>
               <Header />
               <MyAccount />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -73,6 +89,7 @@ const RoutesApp = () => {
             <PrivateRoute>
               <Header />
               <EditUser />
+              <Footer />
             </PrivateRoute>
           }
         />

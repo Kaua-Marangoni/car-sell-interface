@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from "react"
 
-import { Header, CardCategory, CardVehicle, Loading } from "../../components"
+import {
+  Header,
+  CardCategory,
+  CardVehicle,
+  Loading,
+  Footer
+} from "../../components"
+import { Graphic } from "../../components/Graphic"
 import api from "../../services/api"
 import formatNumber from "../../utils/formatNumber"
-import { Container, ContainerCategory, ContainerCars, InfoCar } from "./styles"
+import {
+  Container,
+  ContainerCategory,
+  DivGraphic,
+  ContainerCars,
+  InfoCar
+} from "./styles"
 
 export function Home() {
   const [categories, setCategories] = useState([])
@@ -81,7 +94,10 @@ export function Home() {
           )}
         </ContainerCategory>
 
-        <h1>Anunciados</h1>
+        <DivGraphic>
+          <h1>Anunciados</h1>
+          <Graphic cars={cars} />
+        </DivGraphic>
 
         <ContainerCars>
           {!loadingCars ? (
@@ -97,6 +113,7 @@ export function Home() {
           )}
         </ContainerCars>
       </Container>
+      <Footer />
     </>
   )
 }
